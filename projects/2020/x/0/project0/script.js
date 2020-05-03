@@ -53,17 +53,17 @@ function newTodo(text) {
 function createLI(todo){
   let checked=todo.isSelected==0?false:true
   if(checked){
-    TODOS.todoList+= `<li>
-  <input id='selection_${todo.id}' checked onClick='TODOS.updateSelection(${todo.id})' type='checkbox'/>
-  <span>${todo.text}</span>
-  <button id='btn_${todo.id}' onClick='TODOS.removeTodo(${todo.id})' >Delete</button>
+    TODOS.todoList+= `<li class='${classNames.TODO_ITEM}'>
+  <input class='${classNames.TODO_CHECKBOX}' id='selection_${todo.id}' checked onClick='TODOS.updateSelection(${todo.id})' type='checkbox'/>
+  <span class='${classNames.TODO_TEXT}'>${todo.text}</span>
+  <button class='${classNames.TODO_DELETE}' id='btn_${todo.id}' onClick='TODOS.removeTodo(${todo.id})' >Delete</button>
   </li>`
   }
   else{
-    TODOS.todoList+= `<li>
-  <input id='selection_${todo.id}' onClick='TODOS.updateSelection(${todo.id})' type='checkbox'/>
-  <span>${todo.text}</span>
-  <button id='btn_${todo.id}' onClick='TODOS.removeTodo(${todo.id})' >Delete</button>
+    TODOS.todoList+= `<li class='${classNames.TODO_ITEM}'>
+  <input class='${classNames.TODO_CHECKBOX}' id='selection_${todo.id}' onClick='TODOS.updateSelection(${todo.id})' type='checkbox'/>
+  <span class='${classNames.TODO_TEXT}'>${todo.text}</span>
+  <button class='${classNames.TODO_DELETE}' id='btn_${todo.id}' onClick='TODOS.removeTodo(${todo.id})' >Delete</button>
   </li>`
   }
   
